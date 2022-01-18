@@ -79,6 +79,8 @@ public:
     // Client code should never manually set/get it. This member might be removed in the future.
     bool readonly = false;
 
+    std::string name;
+
 private:
     ConnectionOptions _parse_uri(const std::string &uri) const;
 
@@ -178,6 +180,8 @@ private:
     void _set_options();
 
     void _auth();
+
+    void _set_name();
 
     void _select_db();
 

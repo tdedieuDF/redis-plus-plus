@@ -37,6 +37,10 @@ inline void auth(Connection &connection, const StringView &password) {
     connection.send("AUTH %b", password.data(), password.size());
 }
 
+inline void client_setname(Connection &connection, const StringView &name) {
+    connection.send("CLIENT SETNAME %b", name.data(), name.size());
+}
+
 inline void auth(Connection &connection, const StringView &user, const StringView &password) {
     connection.send("AUTH %b %b",
                     user.data(), user.size(),
