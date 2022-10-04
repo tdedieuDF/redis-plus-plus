@@ -1,6 +1,6 @@
 Name:           redis-plus-plus
-Version:        0.1
-Release:        0
+Version:        1.3
+Release:        5
 Summary:        Application Launcher for Dragonfly applications
 Group:          net
 License:        GPL
@@ -44,6 +44,6 @@ make DESTDIR=$RPM_BUILD_ROOT INSTALL_LIB=lib64 install
 %{_libdir}/*
 
 %changelog
-* Tue Oct 04 2022 Dragonfly <dragonfly@upnext.com> - 1.1-0
+* Tue Oct 04 2022 Dragonfly <dragonfly@upnext.com> - 1.3.5
 - First package
 

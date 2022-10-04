@@ -6,6 +6,3 @@ export DH_QUIET=1
 
 %:
 	dh $@
-
-override_dh_installsystemd:
-	dh_installsystemd --no-enable --no-start 
