@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+# See debhelper(7) (uncomment to enable)
+# output every command that modifies files on the build system.
+#export DH_VERBOSE = 1
+export DH_QUIET=1
+
+%:
+	dh $@
+
+override_dh_installsystemd:
+	dh_installsystemd --no-enable --no-start 

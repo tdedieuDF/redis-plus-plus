@@ -1,0 +1,17 @@
+Source: redis-plus-plus
+Section: net
+Priority: optional
+Maintainer: Dragonfly <dragonfly@upnext.com>
+Description: Redis plus plus
+Standards-Version: 4.6.0
+Build-Depends: debhelper, cmake
+
+Package: redis-plus-plus
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Redis plus plus package
+ 
+Package: redis-plus-plus-devel
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Redis plus plus package devel
