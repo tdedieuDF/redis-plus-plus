@@ -1,7 +1,7 @@
 Name:           redis-plus-plus
-Version:        1.3
-Release:        5
-Summary:        Application Launcher for Dragonfly applications
+Version:        1.3.5
+Release:        0
+Summary:        Redis plus plus
 Group:          net
 License:        GPL
 URL:            http://github.com/Upnext-DragonFly
@@ -10,23 +10,16 @@ Source:         packagesource.tar.gz
 Prefix:         %{_prefix}
 Packager:       Dragonfly
 BuildRoot:      %{_tmppath}/%{name}-%{version}
-# BuildRequires:
-# Requires:
-
-Requires(post): systemd
-Requires(preun): systemd
-Requires(postun): systemd
+BuildRequires:  hiredis-devel
+Requires:       hiredis
 
 %description
-Dragonfly application launcher
+Redis plus plus
 
 %global debug_package %{nil}
 
 %prep
 %setup -c .
-
-%post
-%systemd_post %{name}.service
 
 %build
 CFLAGS="$RPM_OPT_FLAGS" cmake -DCMAKE_INSTALL_PREFIX:PATH=/ .
@@ -42,8 +35,10 @@ make DESTDIR=$RPM_BUILD_ROOT INSTALL_LIB=lib64 install
 %files
 %defattr(-,root,root)
 %{_libdir}/*
+%{_includedir}/*
+/share/cmake/*
 
 %changelog
-* Tue Oct 04 2022 Dragonfly <dragonfly@upnext.com> - 1.3.5
+* Tue Oct 04 2022 Dragonfly <dragonfly@upnext.com> - 1.3.5-0
 - First package
 
