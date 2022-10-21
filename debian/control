@@ -8,10 +8,10 @@ Build-Depends: debhelper, cmake, libhiredis-dev
 
 Package: redis-plus-plus
 Architecture: amd64
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, redis, redis-server, redis-tools
 Description: Redis plus plus package
  
 Package: redis-plus-plus-devel
 Architecture: amd64
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, redis, redis-server, redis-tools
 Description: Redis plus plus package devel

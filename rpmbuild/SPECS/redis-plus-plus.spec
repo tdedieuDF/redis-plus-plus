@@ -1,6 +1,6 @@
 Name:           redis-plus-plus
 Version:        1.3.5
-Release:        0
+Release:        1
 Summary:        Redis plus plus
 Group:          net
 License:        GPL
@@ -10,8 +10,8 @@ Source:         packagesource.tar.gz
 Prefix:         %{_prefix}
 Packager:       Dragonfly
 BuildRoot:      %{_tmppath}/%{name}-%{version}
-BuildRequires:  hiredis-devel
-Requires:       hiredis
+BuildRequires:  hiredis-devel, redis-devel
+Requires:       hiredis, redis, redis-server, redis-tools
 
 %description
 Redis plus plus
@@ -39,6 +39,8 @@ make DESTDIR=$RPM_BUILD_ROOT INSTALL_LIB=lib64 install
 /share/cmake/*
 
 %changelog
+* Fri Oct 21 2022 Dragonfly <dragonfly@upnext.com> - 1.3.5-1
+- Fix dependencies
 * Tue Oct 04 2022 Dragonfly <dragonfly@upnext.com> - 1.3.5-0
 - First package
 
